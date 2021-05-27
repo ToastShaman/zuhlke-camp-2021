@@ -2,7 +2,7 @@
   "name": "znake-starter-node",
   "version": "1.0.0",
   "description": "znake-starter written in Node",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

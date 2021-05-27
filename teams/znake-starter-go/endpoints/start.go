@@ -26,7 +26,7 @@ func Start(w http.ResponseWriter, r *http.Request) {
 
 	response, err := json.MarshalIndent(startResponse, "", "  ")
 
-	fmt.Fprintf(w, string(response))
+	_, _ = fmt.Fprintf(w, string(response))
 }
 
 type StartRequest struct {
