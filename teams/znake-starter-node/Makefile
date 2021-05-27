@@ -1,0 +1,4 @@
+run:
+	rm -rf ./dist && npm run build
+	node ./dist/index.js
+.PHONY: run
