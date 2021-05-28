@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ZnakeStarterApplication
+class Znake
 
 fun main(args: Array<String>) {
-	runApplication<ZnakeStarterApplication>(*args)
+	runApplication<Znake>(*args)
 }

@@ -1,4 +1,4 @@
-package com.zuhlke.znake.znakestarter.api
+package com.zuhlke.znake.znakestarter.api.start
 
 enum class Head {
     bendr,

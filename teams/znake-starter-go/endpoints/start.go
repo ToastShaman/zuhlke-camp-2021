@@ -19,8 +19,6 @@ func Start(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	println(startRequest.GameID)
-
 	var startResponse = StartResponse{
 		"#FB6376",
 		"#C9DDFF",

@@ -1,4 +1,4 @@
-package com.zuhlke.znake.znakestarter.api
+package com.zuhlke.znake.znakestarter.api.move
 
 data class World(
     val id: Int,
@@ -12,11 +12,6 @@ data class World(
 
 data class Food(
     val `data`: List<Point>,
-)
-
-data class Point(
-    val x: Int,
-    val y: Int
 )
 
 data class Body(

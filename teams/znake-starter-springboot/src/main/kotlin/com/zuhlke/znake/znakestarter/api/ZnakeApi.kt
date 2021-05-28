@@ -1,5 +1,11 @@
 package com.zuhlke.znake.znakestarter.api
 
+import com.zuhlke.znake.znakestarter.api.end.EndRequest
+import com.zuhlke.znake.znakestarter.api.move.Move
+import com.zuhlke.znake.znakestarter.api.move.MoveResponse
+import com.zuhlke.znake.znakestarter.api.move.World
+import com.zuhlke.znake.znakestarter.api.start.StartRequest
+import com.zuhlke.znake.znakestarter.api.start.StartResponse
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody

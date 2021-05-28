@@ -1,4 +1,4 @@
-package com.zuhlke.znake.znakestarter.api
+package com.zuhlke.znake.znakestarter.api.move
 
 enum class Move {
 

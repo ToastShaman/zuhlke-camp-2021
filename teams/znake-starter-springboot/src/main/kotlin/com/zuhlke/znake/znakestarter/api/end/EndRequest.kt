@@ -1,11 +1,11 @@
-package com.zuhlke.znake.znakestarter.api
+package com.zuhlke.znake.znakestarter.api.end
 
-import kotlin.Number
+import kotlin.Int
 import kotlin.String
 import kotlin.collections.List
 
 data class EndRequest(
-    val game_id: Number,
+    val game_id: Int,
     val winners: List<String>,
     val dead_snakes: DeadSnakes
 )
@@ -15,12 +15,12 @@ data class DeadSnakes(
 )
 
 data class Death(
-    val turn: Number,
+    val turn: Int,
     val causes: List<String>
 )
 
 data class DeadSnake(
     val id: String,
-    val length: Number,
+    val length: Int,
     val death: Death
 )

@@ -19,7 +19,7 @@ func Move(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	println(world.ID)
+	fmt.Printf("%+v\n", world)
 
 	var moveResponse = MoveResponse{"up"}
 
@@ -31,10 +31,13 @@ func Move(w http.ResponseWriter, r *http.Request) {
 }
 
 type World struct {
-	Food   Food   `json:"food"`
-	Height int    `json:"height"`
 	ID     int    `json:"id"`
-	Snakes Snakes `json:Snakes`
+	Turn   int    `json:"turn"`
+	Height int    `json:"height"`
+	Width  int    `json:"width"`
+	Food   Food   `json:"food"`
+	Snakes Snakes `json:"snakes"`
+	Snake  Snake  `json:"you"`
 }
 
 type MoveResponse struct {
@@ -55,17 +58,14 @@ type Body struct {
 }
 
 type Snake struct {
+	ID     string `json:"id"`
+	Name   string `json:"name"`
 	Body   Body   `json:"body"`
 	Health int    `json:"health"`
-	ID     string `json:"id"`
 	Length int    `json:"length"`
-	Name   string `json:"name"`
 	Taunt  string `json:"taunt"`
 }
 
 type Snakes struct {
-	Data  []Snake `json:"snakes"`
-	Turn  int     `json:"turn"`
-	Width int     `json:"width"`
-	You   Snake   `json:"you"`
+	Data []Snake `json:"data"`
 }
