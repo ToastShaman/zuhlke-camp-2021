@@ -1,7 +1,12 @@
 FROM node:12-alpine
 COPY . /src
 WORKDIR /src
+
+RUN npm install
 RUN npm run build
 
-EXPOSE 8080
+RUN addgroup -S app && adduser -S app -G app
+USER app
+
+EXPOSE 9090
 ENTRYPOINT ["node", "."]

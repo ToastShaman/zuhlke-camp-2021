@@ -6,29 +6,42 @@ services:
     ports:
       - "3000:3000"
 
-  zsnake-java:
+  znake-java:
+    image: znake-java:latest
     build:
       context: .
       dockerfile: ./teams/znake-starter-springboot/Dockerfile
     ports:
-      - "8080:8080"
+      - "9090:9090"
     depends_on:
       - battlesnake
 
-  zsnake-node:
+  znake-node:
+    image: znake-node:latest
     build:
       context: ./teams/znake-starter-node
       dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - "9091:9090"
     depends_on:
       - battlesnake
 
-  zsnake-go:
+  znake-go:
+    image: znake-go:latest
     build:
       context: ./teams/znake-starter-go
       dockerfile: Dockerfile
     ports:
-      - "8082:8080"
+      - "9092:9090"
+    depends_on:
+      - battlesnake
+
+  znake-python:
+    image: znake-python:latest
+    build:
+      context: ./teams/znake-starter-python
+      dockerfile: Dockerfile
+    ports:
+      - "9093:9090"
     depends_on:
       - battlesnake

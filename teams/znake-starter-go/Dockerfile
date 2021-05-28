@@ -5,5 +5,9 @@ RUN go build -o /out/snake
 
 FROM golang:1.16.4-alpine3.13
 COPY --from=build /out/snake /app/snake
-EXPOSE 8080
+
+RUN addgroup -S app && adduser -S app -G app
+USER app
+
+EXPOSE 9090
 ENTRYPOINT ["/app/snake"]

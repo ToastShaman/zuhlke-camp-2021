@@ -18,9 +18,9 @@ export class StartResponse {
     readonly head_type: Head
     readonly tail_type: Tail
 
-    constructor(color: string = "#FF0000",
-                secondary_color: string = "#00FF00",
-                head_url: string = "http://tinygraphs.com/spaceinvaders/tinygraphs?theme=sugarsweets&numcolors=2&size=220&fmt=png",
+    constructor(color: string = "#064789",
+                secondary_color: string = "#679436",
+                head_url: string = "https://avatars.dicebear.com/api/identicon/node.svg",
                 taunt: string = "OH GOD NOT THE BEES",
                 head_type: Head = Head.bendr,
                 tail_type: Tail = Tail.blockbum) {

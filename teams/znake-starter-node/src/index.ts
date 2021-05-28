@@ -3,7 +3,7 @@ import {Move, MoveResponse, StartRequest, StartResponse, World} from "./api";
 import logger from "morgan";
 import createError, {HttpError} from "http-errors";
 
-const port: number = 8080
+const port: number = 9090
 const app: Express = express();
 
 app.use(logger('dev'));

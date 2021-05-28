@@ -21,7 +21,16 @@ func Start(w http.ResponseWriter, r *http.Request) {
 
 	println(startRequest.GameID)
 
-	var startResponse = StartResponse{"#123456", "#654321", "", "", "pixel", "pixel"}
+	var startResponse = StartResponse{
+		"#FB6376",
+		"#C9DDFF",
+		"https://avatars.dicebear.com/api/identicon/go.svg",
+		"I am go",
+		"pixel",
+		"pixel",
+	}
+
+	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(200)
 
 	response, err := json.MarshalIndent(startResponse, "", "  ")

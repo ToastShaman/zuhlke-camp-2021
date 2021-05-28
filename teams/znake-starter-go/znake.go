@@ -11,9 +11,9 @@ func main() {
 	http.HandleFunc("/move", endpoints.Move)
 	http.HandleFunc("/end", endpoints.End)
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":9090", nil); err != nil {
 		log.Fatal(err)
 	}
 
-	println("Starting server at port 8080")
+	println("Starting server at port 9090")
 }

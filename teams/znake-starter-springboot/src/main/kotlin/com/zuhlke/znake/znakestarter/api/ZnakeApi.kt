@@ -15,7 +15,7 @@ class ZnakeApi {
     fun move(@RequestBody world: World): ResponseEntity<Any> {
         println(world)
 
-        // TODO: Decide where you want to move
+        // TODO: decide where you would like to move next
         return ResponseEntity.ok(MoveResponse(Move.up))
     }
 

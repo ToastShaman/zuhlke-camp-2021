@@ -25,8 +25,9 @@ func Move(w http.ResponseWriter, r *http.Request) {
 
 	response, err := json.MarshalIndent(moveResponse, "", "  ")
 
+	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(200)
-	fmt.Fprintf(w, string(response))
+	_, _ = fmt.Fprintf(w, string(response))
 }
 
 type World struct {

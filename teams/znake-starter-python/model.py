@@ -21,7 +21,12 @@ class StartResponse(object):
     head_type: str
     tail_type: str
 
-    def __init__(self, color: str, secondary_color: str, head_url: str, taunt: str, head_type: str,
+    def __init__(self,
+                 color: str,
+                 secondary_color: str,
+                 head_url: str,
+                 taunt: str,
+                 head_type: str,
                  tail_type: str) -> None:
         self.color = color
         self.secondary_color = secondary_color
@@ -57,7 +62,13 @@ class Snake(object):
     object: str
     taunt: str
 
-    def __init__(self, body: Food, health: int, id: UUID, length: int, name: str, taunt: str) -> None:
+    def __init__(self,
+                 body: Food,
+                 health: int,
+                 id: UUID,
+                 length: int,
+                 name: str,
+                 taunt: str) -> None:
         self.body = body
         self.health = health
         self.id = id
@@ -82,7 +93,14 @@ class World(object):
     width: int
     you: Snake
 
-    def __init__(self, food: Food, height: int, id: int, snakes: Snakes, turn: int, width: int, you: Snake) -> None:
+    def __init__(self,
+                 food: Food,
+                 height: int,
+                 id: int,
+                 snakes: Snakes,
+                 turn: int,
+                 width: int,
+                 you: Snake) -> None:
         self.food = food
         self.height = height
         self.id = id

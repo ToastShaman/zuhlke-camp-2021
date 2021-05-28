@@ -6,6 +6,10 @@ A Battlesnake playground for Zuhlke's 2021 summer camp.
 
 See https://github.com/conflictserpent/battlesnake-server-2018
 
-## UI
+## GamePlay
 
-![battlesnake-uis](screenshot.jpg)
+![battlesnake-uis](screenshot-game.jpg)
+
+## Configuration
+
+![battlesnake-uis](screenshot-new-game.jpg)
