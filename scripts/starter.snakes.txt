@@ -1,0 +1,4 @@
+java, http://znake-java:9090
+go,http://znake-go:9090
+node,http://znake-node:9090
+python,http://znake-python:9090
