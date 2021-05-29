@@ -1,5 +1,5 @@
 run-battlesnake-server:
-	docker run --rm -it -p 5000:3000 sendwithus/battlesnake-server
+	docker run --rm -it -p 3000:3000 sendwithus/battlesnake-server
 .PHONY: run-battlesnake-server
 
 clean:

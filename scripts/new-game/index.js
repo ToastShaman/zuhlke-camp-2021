@@ -35,7 +35,7 @@ async function setupNewGame(snakes) {
     const browser = await chromium.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
-    await page.goto('http://localhost:5000/new');
+    await page.goto('http://localhost:3000/new');
 
     await configureBoardSize(20, 20);
     await configureMaxFood(3);
