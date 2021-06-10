@@ -67,7 +67,7 @@ export class MoveResponse {
 }
 
 export enum Move {
-    up, right, ldown, left
+    up = "up", right = "right", down = "down", left = "left"
 }
 
 export class World {
