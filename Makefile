@@ -17,3 +17,7 @@ up:
 down:
 	docker compose stop
 .PHONY: down
+
+tournament:
+	docker compose -f docker-compose.tournament.yml up --build --remove-orphans --force-recreate
+.PHONY: tournament

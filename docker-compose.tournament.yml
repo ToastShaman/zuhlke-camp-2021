@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  battlesnake:
+    image: sendwithus/battlesnake-server
+    ports:
+      - "3000:3000"
+
+  znake-kaa:
+    image: znake-kaa:latest
+    build:
+      context: ./teams/znake-starter-node
+      dockerfile: Dockerfile
+    ports:
+      - "9094:9090"
+    depends_on:
+      - battlesnake
+
+  znake-sidewinder:
+    image: znake-sidewinder:latest
+    build:
+      context: .
+      dockerfile: ./teams/sidewinder/Dockerfile
+    ports:
+      - "9095:9090"
+    depends_on:
+      - battlesnake

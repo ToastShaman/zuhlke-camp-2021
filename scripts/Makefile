@@ -10,6 +10,10 @@ starters: install
 	cat starter.snakes.txt | node ./new-game/index.js
 .PHONY: starters
 
+tournament: install
+	cat tournament.snakes.txt | node ./new-game/index.js
+.PHONY: tournament
+
 install:
 	cd ./new-game && npm install > /dev/null
 .PHONY: install

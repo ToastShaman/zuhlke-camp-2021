@@ -1,0 +1,2 @@
+kaa, http://znake-kaa:9090
+sidewinder, http://znake-sidewinder:9090
