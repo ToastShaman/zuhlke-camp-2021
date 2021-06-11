@@ -128,7 +128,7 @@ enum Direction {
 
 
 fn start_game(_request: StartRequest) -> Json {
-
+    print!("Received Start");
     let response = StartResponse {
         color: String::from("#e89910"),
         secondary_color: String::from("#000000"),
@@ -142,19 +142,21 @@ fn start_game(_request: StartRequest) -> Json {
 }
 
 fn end_game(_request: EndRequest) -> Json{
+    print!("Received End");
     return warp::reply::json(&EndResponse{})
 }
 
 fn move_snake(request: World) -> Json {
+    print!("Received move");
 
     //selfPosition
-    let position = request.you.body[0];
+    let position = request.you.body.data.first().unwrap();
 
 
     //findFood
-    let nearest_food = find_nearest_food(position, request.food.data);
+    let nearest_food = request.food.data.first();
     let move_direction = nearest_food.map_or(Direction::Up, | food_position | {
-        calculate_direction(positon,food_position)
+        calculate_direction(position,food_position)
     });
 
     //self collision
@@ -167,19 +169,15 @@ fn move_snake(request: World) -> Json {
     return warp::reply::json(&response)
 }
 
-fn find_nearest_food(position: Point, food: Vec<Point>) -> Option<&Point> {
-    return food.first()
 
-}
-
-fn calculate_direction(position: Point, food: &Point) -> Direction{
+fn calculate_direction(position: &Point, food: &Point) -> Direction{
     return if food.x > position.x {
         Direction::Right
     } else if food.x < position.x {
-        Direction.Left
-    } else if food.y > position.y {
-        Direction.Up
+        Direction::Left
+    } else if food.y < position.y {
+        Direction::Up
     } else {
-        Direction.Down
+        Direction::Down
     }
 }
