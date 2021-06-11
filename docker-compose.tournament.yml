@@ -25,3 +25,13 @@ services:
       - "9095:9090"
     depends_on:
       - battlesnake
+
+  zsnzke-rusty:
+    image: zsnake-rusty:latest
+    build:
+      context: ./teams/zsnake-rusty-manchester/zsnake
+      dockerfile: Dockerfile
+    ports:
+      - "9096:3030"
+    depends_on:
+      - battlesnake
