@@ -2,8 +2,8 @@ import express, {Express, NextFunction, Request, Response} from 'express';
 import {Move, MoveResponse, StartRequest, StartResponse, World} from "./api";
 import logger from "morgan";
 import createError, {HttpError} from "http-errors";
-import {DoNotEatYourself, FindFood, Movement, OutOfBoundsValidator} from './movementFile';
-// import { OutOfBoundsValidator } from './Movement';
+import {DoNotEatOtherSnakes, DoNotEatYourself, FindFood, Movement, OutOfBoundsValidator} from './movementFile';
+
 
 const port: number = 9090
 const app: Express = express();
@@ -32,6 +32,7 @@ function nextMove(world: World): Movement {
     let validators = [
         new OutOfBoundsValidator(world),
         new DoNotEatYourself(world),
+        new DoNotEatOtherSnakes(world),
         new FindFood(world)
     ]
 

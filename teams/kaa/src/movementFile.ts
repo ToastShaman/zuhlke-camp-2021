@@ -91,6 +91,32 @@ export class DoNotEatYourself {
 }
 
 
+export class DoNotEatOtherSnakes {
+    readonly world: World
+
+    constructor(world: World) {
+        this.world = world
+    }
+
+    public movements(): Movement[] {
+        return [
+            {move: Move.up, score: this.validate(moveUp(this.world))},
+            {move: Move.down, score: this.validate(moveDown(this.world))},
+            {move: Move.left, score: this.validate(moveLeft(this.world))},
+            {move: Move.right, score: this.validate(moveRight(this.world))}
+        ]
+    }
+
+    private validate(head: Point): number {
+        if (this.world.snakes.data.flatMap(x => x.body.data).some(point => point.x === head.x && point.y === head.y)) {
+            return terminal
+        } else {
+            return 0
+        }
+    }
+}
+
+
 function distance(food: Point, currentHead: Point) {
     return Math.sqrt(Math.pow(food.x - currentHead.x, 2) + Math.pow(food.y - currentHead.y, 2));
 }
