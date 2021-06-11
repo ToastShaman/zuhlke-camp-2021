@@ -1,7 +1,7 @@
 rootProject.name = "znake-arena"
 
 includeTeam("znake-starter-springboot")
-includeTeam("znake-davidd")
+includeTeam("remotecontrol")
 includeTeam("sidewinder")
 
 fun includeTeam(teamName: String) {
