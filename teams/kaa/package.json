@@ -1,7 +1,7 @@
 {
-  "name": "znake-starter-node",
+  "name": "kaa",
   "version": "1.0.0",
-  "description": "znake-starter written in Node",
+  "description": "kaa rocks",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",

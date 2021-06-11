@@ -1,4 +1,4 @@
-# znake-starter-node
+# Kaa
 
 Health is the number of turns we can have before we die?
 Food restores health to 100%?
@@ -16,7 +16,6 @@ We cannot hit ourselves
 Iterations:
 x 1.Snake doesnt hit boundaries
 x 2.Snake doesnt hit ourselfves
-
-3.Snake that finds food
-4.Snake that avoids other snakes
+x 3.Snake that finds food
+x 4.Snake that avoids other snakes
 5.Understands food competition
