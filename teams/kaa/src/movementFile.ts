@@ -57,7 +57,7 @@ export class OutOfBoundsValidator {
             return terminal
         }
 
-        if (head.y == 0 || head.y > this.world.height - 1) {
+        if (head.y < 0 || head.y > this.world.height - 1) {
             return terminal
         }
 
