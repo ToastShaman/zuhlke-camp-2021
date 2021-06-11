@@ -2,8 +2,7 @@ import express, {Express, NextFunction, Request, Response} from 'express';
 import {Move, MoveResponse, StartRequest, StartResponse, World} from "./api";
 import logger from "morgan";
 import createError, {HttpError} from "http-errors";
-import {DoNotEatOtherSnakes, DoNotEatYourself, FindFood, Movement, OutOfBoundsValidator} from './movementFile';
-
+import {DoNotEatOtherSnakes, DoNotEatYourself, FindFood, Movement, OutOfBoundsValidator} from './snake';
 
 const port: number = 9090
 const app: Express = express();
