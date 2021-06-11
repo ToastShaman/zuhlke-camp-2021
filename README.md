@@ -15,13 +15,13 @@ See https://github.com/conflictserpent/battlesnake-server-2018
 ### Manual Configuration
 
 ```shell
-# 1) run the battlesnake-server on localhost:5000
+# 1) run the battlesnake-server on localhost:3000
 make run-battlesnake-server
 
 # 2) Start your Snake on your local machine on a port (e.g.: 7070)
 
 # 3) Create a new game in the UI
-open http://localhost:5000/new
+open http://localhost:3000/new
 
 # 4) Enter your snakes url: http://host.docker.internal:7070 
 ```
