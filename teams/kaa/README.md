@@ -14,8 +14,9 @@ We cannot hit ourselves
 
 
 Iterations:
-1.Snake doesnt hit boundaries
-2.Snake doesnt hit ourselfves
+x 1.Snake doesnt hit boundaries
+x 2.Snake doesnt hit ourselfves
+
 3.Snake that finds food
 4.Snake that avoids other snakes
 5.Understands food competition

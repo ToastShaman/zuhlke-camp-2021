@@ -2,7 +2,7 @@ import express, {Express, NextFunction, Request, Response} from 'express';
 import {Move, MoveResponse, StartRequest, StartResponse, World} from "./api";
 import logger from "morgan";
 import createError, {HttpError} from "http-errors";
-import {DoNotEatYourself, Movement, OutOfBoundsValidator} from './movementFile';
+import {DoNotEatYourself, FindFood, Movement, OutOfBoundsValidator} from './movementFile';
 // import { OutOfBoundsValidator } from './Movement';
 
 const port: number = 9090
@@ -31,13 +31,12 @@ function calculateScores(currentValue: Movement[], accumulator: Movement[], move
 function nextMove(world: World): Movement {
     let validators = [
         new OutOfBoundsValidator(world),
-        new DoNotEatYourself(world)
+        new DoNotEatYourself(world),
+        new FindFood(world)
     ]
 
     let movements = validators
         .map(v => v.movements());
-
-    console.log(JSON.stringify(movements))
 
     return movements
 
@@ -52,19 +51,7 @@ function nextMove(world: World): Movement {
 
 app.post("/move", (req: Request, res: Response) => {
     const world = req.body as World
-
-    console.log(JSON.stringify(world))
-
-    //determine the best possible Move,
-    //for each direction, what is the most successful,
-    //compare each direction's score
-    //chose the highest score
-
     let movement = nextMove(world);
-
-    console.log(JSON.stringify(movement))
-
-    // TODO: decide where you would like to move next
     res.json(new MoveResponse(movement.move))
 });
 
