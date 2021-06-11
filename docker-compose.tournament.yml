@@ -9,7 +9,7 @@ services:
   znake-kaa:
     image: znake-kaa:latest
     build:
-      context: ./teams/znake-starter-node
+      context: ./teams/kaa
       dockerfile: Dockerfile
     ports:
       - "9094:9090"
