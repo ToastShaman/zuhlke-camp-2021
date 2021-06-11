@@ -145,9 +145,41 @@ fn end_game(_request: EndRequest) -> Json{
     return warp::reply::json(&EndResponse{})
 }
 
-fn move_snake(_request: World) -> Json {
+fn move_snake(request: World) -> Json {
+
+    //selfPosition
+    let position = request.you.body[0];
+
+
+    //findFood
+    let nearest_food = find_nearest_food(position, request.food.data);
+    let move_direction = nearest_food.map_or(Direction::Up, | food_position | {
+        calculate_direction(positon,food_position)
+    });
+
+    //self collision
+    //snake collision
+
     let response = MoveResponse {
-        direction: Direction::Up
+        direction: move_direction
     };
+
     return warp::reply::json(&response)
+}
+
+fn find_nearest_food(position: Point, food: Vec<Point>) -> Option<&Point> {
+    return food.first()
+
+}
+
+fn calculate_direction(position: Point, food: &Point) -> Direction{
+    return if food.x > position.x {
+        Direction::Right
+    } else if food.x < position.x {
+        Direction.Left
+    } else if food.y > position.y {
+        Direction.Up
+    } else {
+        Direction.Down
+    }
 }
