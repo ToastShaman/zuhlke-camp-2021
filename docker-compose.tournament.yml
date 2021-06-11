@@ -26,8 +26,8 @@ services:
     depends_on:
       - battlesnake
 
-  zsnzke-rusty:
-    image: zsnake-rusty:latest
+  znake-rusty:
+    image: znake-rusty:latest
     build:
       context: ./teams/zsnake-rusty-manchester/zsnake
       dockerfile: Dockerfile
