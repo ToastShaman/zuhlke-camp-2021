@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+    }
+}
+
+apply plugin: 'application'
+
+mainClassName = "com.example.ZnakeDavidDKt"
+apply plugin: 'com.github.johnrengelman.shadow'
+
+shadowJar {
+    archiveBaseName.set(project.name)
+    archiveClassifier.set(null)
+    archiveVersion.set(null)
+    mergeServiceFiles()
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin'
+
+compileKotlin.kotlinOptions.jvmTarget = "11"
+compileTestKotlin.kotlinOptions.jvmTarget = "11"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    implementation "org.http4k:http4k-client-websocket:${http4kVersion}"
+    implementation "org.http4k:http4k-core:${http4kVersion}"
+    implementation "org.http4k:http4k-format-moshi:${http4kVersion}"
+    implementation "org.http4k:http4k-server-undertow:${http4kVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
